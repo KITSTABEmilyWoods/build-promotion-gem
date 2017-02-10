@@ -1,7 +1,7 @@
-require_relative '../config'
+require_relative '../configure'
 
 class UserCommsHelper
-  all_tags = Config.tag_types['all_tags']
+  all_tags = Configure.tag_types['all_tags']
   ERROR_INITIALISE_WITH_STRING_IO = "Initialise with StringIO objects"
   TELL_USER_NO_DEVELOP_TAGS = "No develop tags exist for this repository"
   ASK_USER_INCREMENT_TYPE = "Would you like to do a major, minor, or patch increment?"

@@ -67,13 +67,28 @@ describe 'DevelopTagGenerator' do
         expect(next_tag).to eq("dev-v2.0.0")
       end
 
+      it 'returns the next version for Ma (major) update' do
+        next_tag = develop_tag_generator.next_develop_tag("ma")
+        expect(next_tag).to eq("dev-v2.0.0")
+      end
+
       it 'returns the next version for minor update' do
         next_tag = develop_tag_generator.next_develop_tag("minor")
         expect(next_tag).to eq("dev-v1.2.0")
       end
 
-      it 'returns the next version for patch update' do
-        next_tag = develop_tag_generator.next_develop_tag("patch")
+      it 'returns the next version for mI (minor) update' do
+        next_tag = develop_tag_generator.next_develop_tag("mi")
+        expect(next_tag).to eq("dev-v1.2.0")
+      end
+
+      it 'returns the next version for p (patch) update' do
+        next_tag = develop_tag_generator.next_develop_tag("p")
+        expect(next_tag).to eq("dev-v1.1.2")
+      end
+
+      it 'returns the next version for p (patch) update' do
+        next_tag = develop_tag_generator.next_develop_tag("p")
         expect(next_tag).to eq("dev-v1.1.2")
       end
     end

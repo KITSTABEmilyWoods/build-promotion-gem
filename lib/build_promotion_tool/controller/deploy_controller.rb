@@ -68,7 +68,7 @@ class DeployController
     loop do
       @user_comms.ask_increment_type
       @to_increment = @user_comms.user_increment_choice
-      break if ['major', 'minor', 'patch'].include? @to_increment
+      break if ['major', 'minor', 'patch', 'p', 'mi', 'ma'].include? @to_increment
     end
     @to_increment
   end

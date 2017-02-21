@@ -59,6 +59,20 @@ describe 'UserCommsHelper' do
         end
       end
 
+      context "when the user inputs their increment_choice as 'ma'" do
+        it "should accept the user's input as major" do
+          allow(stdin).to receive(:gets).and_return("ma")
+          expect(user_comms.user_increment_choice).to eq("ma")
+        end
+      end
+
+      context "when the user inputs their increment_choice as 'mA'" do
+        it "should accept the user's input as major" do
+          allow(stdin).to receive(:gets).and_return("mA")
+          expect(user_comms.user_increment_choice).to eq("ma")
+        end
+      end
+
       context "when the user inputs a choice which is not major, minor, or patch" do
         it "returns an error asking the user to choose major, minor, or patch" do
           allow(stdin).to receive(:gets).and_return("hello")

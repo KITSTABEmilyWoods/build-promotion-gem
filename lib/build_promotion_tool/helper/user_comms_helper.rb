@@ -4,7 +4,7 @@ class UserCommsHelper
   all_tags = Configure.tag_types['all_tags']
   ERROR_INITIALISE_WITH_STRING_IO = "Initialise with StringIO objects"
   TELL_USER_NO_DEVELOP_TAGS = "No develop tags exist for this repository"
-  ASK_USER_INCREMENT_TYPE = "Would you like to do a major, minor, or patch increment?"
+  ASK_USER_INCREMENT_TYPE = "Would you like to do a major(ma), minor(mi), or patch(p) increment?"
   ERROR_SELECT_ACCEPTED_INCREMENT_TYPE = "Error: please select major, minor or patch update"
   ERROR_NEXT_TAG_NOT_ASSIGNED = "Next tag has not been assigned"
   ERROR_SELECT_Y_OR_N = "Error: please select y/n"
@@ -28,7 +28,7 @@ class UserCommsHelper
 
   def user_increment_choice
     increment_choice = @stdin.gets.chomp().downcase
-    if increment_choice == "major" || increment_choice == "minor" || increment_choice == "patch"
+    if ['major', 'minor', 'patch', 'p', 'mi','ma'].include? increment_choice
       return increment_choice
     else
       @stdout.puts ERROR_SELECT_ACCEPTED_INCREMENT_TYPE

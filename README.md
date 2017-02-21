@@ -31,7 +31,7 @@ __First Deploy Step: Dev Tag__
 ```
 
 - If no prior develop tag has been assigned, the user will be asked whether they would like to assign the first develop tag. If they select yes, first tag 'dev-v0.0.1' is applied.
-- If previous develop tags have been applied, the latest develop tag is displayed and the user is asked whether they would like to do a _major, minor, or patch_ update. See: [Semantic Versioning](http://semver.org).
+- If previous develop tags have been applied, the latest develop tag is displayed and the user is asked whether they would like to do a `major/ma`, `minor/mi`, or `patch/p` update. See: [Semantic Versioning](http://semver.org).
 - The user inputs their choice, the user is shown the new tag (e.g. dev-v0.1.2) and is asked to confirm their choice and apply the tag.
 - When the user selects yes to updating the tag, the tag version number is updated.
 - The tag is then added to the repository and pushed to the remote.

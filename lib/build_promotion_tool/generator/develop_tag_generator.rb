@@ -12,11 +12,11 @@ class DevelopTagGenerator
   def next_develop_tag(to_increment)
     last_version = biggest_version
     case to_increment
-    when "major"
+    when "major", "ma"
       "dev-v#{last_version.major + 1}.0.0"
-    when "minor"
+    when "minor", "mi"
       "dev-v#{last_version.major}.#{last_version.minor + 1}.0"
-    when "patch"
+    when "patch", "p"
       "dev-v#{last_version.major}.#{last_version.minor}.#{last_version.patch + 1}"
     end
   end
